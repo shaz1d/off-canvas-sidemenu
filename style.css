@@ -123,15 +123,68 @@ header {
   flex-direction: column;
   gap: 20px;
   padding-bottom: 30px;
-  border-bottom: 1px solid var(--border);
+  width: 100%;
 }
 .sidemenu-top > a > img {
   width: 100%;
   max-width: 160px;
 }
-.sidemenu-top > p {
+.mobile-menu,
+.sub-menu {
+  list-style: none;
+  width: 100%;
+}
+.mobile-menu {
+  padding-bottom: 20px;
+}
+
+.mobile-menu > li > div {
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+.mobile-menu > li a {
+  text-decoration: none;
+  color: var(--white);
+  transition: color 0.25s ease;
+  padding: 10px 0;
+  width: 100%;
+}
+.mobile-menu > li a:hover {
+  color: var(--brand);
+}
+.cp-dropdown-toggle {
+  border: 1px solid var(--border);
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 8px 10px;
+  transition: color 0.25s ease;
+}
+.cp-dropdown-toggle:hover {
+  color: var(--brand);
+}
+.cp-dropdown-toggle.active > i {
+  transition: all 0.2s ease;
+}
+.cp-dropdown-toggle.active > i {
+  transform: rotate(45deg);
+}
+.sub-menu li {
+  border-bottom: 1px solid var(--border);
+}
+.sub-menu li a {
+  padding: 10px 0px 10px 30px;
+  width: 100%;
+  display: block;
+}
+.mobile-menu .sidemenu-container > p {
   font-size: 16px;
   line-height: 190%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
 }
 .sidemenu-contact {
   width: 100%;
@@ -194,4 +247,14 @@ header {
 }
 .sidemenu-social > .icon:hover {
   color: var(--brand);
+}
+
+@media screen and (max-width: 768px) {
+  .sidemenu-top {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  #sidemenu-close-btn {
+    align-self: flex-start;
+  }
 }
