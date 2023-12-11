@@ -166,11 +166,22 @@ header {
 .cp-dropdown-toggle:hover {
   color: var(--brand);
 }
-.cp-dropdown-toggle.active > i {
+.cp-dropdown-toggle > i {
   transition: all 0.2s ease;
+  pointer-events: none;
 }
 .cp-dropdown-toggle.active > i {
   transform: rotate(45deg);
+}
+.sub-menu {
+  opacity: 0;
+  height: 0;
+  transition: all 0.25s ease;
+}
+.sub-menu.active {
+  opacity: 1;
+  height: auto;
+  overflow: auto;
 }
 .sub-menu li {
   border-bottom: 1px solid var(--border);

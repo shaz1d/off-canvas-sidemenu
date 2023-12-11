@@ -13,7 +13,10 @@ function menuClose() {
 }
 dropdownToggle.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    console.log(e.target);
+    console.log(e.target.nextSibling.parentElement.nextElementSibling);
+    const elSubMenu = e.target.nextSibling.parentElement.nextElementSibling;
+
+    elSubMenu.classList.toggle("active");
   });
 });
 closeBtn.addEventListener("click", menuClose);
