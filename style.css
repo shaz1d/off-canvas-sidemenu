@@ -136,6 +136,7 @@ header {
 }
 .mobile-menu {
   padding-bottom: 20px;
+  display: none;
 }
 
 .mobile-menu > li > div {
@@ -174,14 +175,14 @@ header {
   transform: rotate(45deg);
 }
 .sub-menu {
-  opacity: 0;
-  height: 0;
+  display: none;
   transition: all 0.25s ease;
+  pointer-events: none;
+  background-color: var(--black);
 }
 .sub-menu.active {
-  opacity: 1;
-  height: auto;
-  overflow: auto;
+  display: block;
+  pointer-events: auto;
 }
 .sub-menu li {
   border-bottom: 1px solid var(--border);
@@ -191,7 +192,7 @@ header {
   width: 100%;
   display: block;
 }
-.mobile-menu .sidemenu-container > p {
+.sidemenu-container > p {
   font-size: 16px;
   line-height: 190%;
   padding-bottom: 20px;
@@ -267,5 +268,16 @@ header {
   }
   #sidemenu-close-btn {
     align-self: flex-start;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .sidemenu-container > p {
+    display: none;
+  }
+}
+@media screen and (max-width: 460px) {
+  .sidemenu-area .sidemenu-container {
+    padding: 30px;
   }
 }
