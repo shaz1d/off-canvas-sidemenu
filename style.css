@@ -34,11 +34,18 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+.navbar > div {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
 .logo {
   width: 100%;
   max-width: 180px;
 }
-#sidemenu-btn {
+
+#sidemenu-btn,
+#search-btn {
   height: 55px;
   width: 55px;
   background-color: var(--white);
